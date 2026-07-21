@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    scroll-behavior: smooth;
+  }
+
+  * {
+    @apply border-gray-200 dark:border-gray-700;
+  }
+
+  body {
+    @apply bg-white text-gray-900 font-sans antialiased transition-colors duration-300;
+    @apply dark:bg-gray-950 dark:text-gray-100;
+  }
+
+  ::selection {
+    @apply bg-primary/30 text-primary-dark dark:bg-primary/40 dark:text-primary-light;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-max {
+    @apply max-w-6xl mx-auto;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent;
+  }
+
+  .card {
+    @apply bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800
+           shadow-sm hover:shadow-md transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-white font-medium
+           hover:bg-primary-dark transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg
+           hover:shadow-primary/25 active:translate-y-0;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-primary text-primary
+           font-medium hover:bg-primary hover:text-white transition-all duration-200
+           hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/25 active:translate-y-0
+           dark:text-primary-light dark:border-primary-light dark:hover:bg-primary dark:hover:text-white;
+  }
+}
+
+/* Typing cursor */
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  background: #7C3AED;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Progress bar */
+.progress-bar {
+  @apply h-1.5 rounded-full bg-gradient-to-r from-primary to-primary-light;
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/40 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/70;
+}

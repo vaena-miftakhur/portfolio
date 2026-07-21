@@ -1,0 +1,59 @@
+---
+import { certificates } from '@/data/certificates';
+---
+
+<section id="certificates" class="section-padding bg-gray-50/50 dark:bg-gray-900/50">
+  <div class="container-max">
+    <div class="text-center mb-16 reveal">
+      <p class="text-primary font-semibold tracking-wider uppercase text-sm mb-2">Pencapaian</p>
+      <h2 class="text-3xl sm:text-4xl font-bold">Certificates</h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {certificates.map((cert, i) => (
+        <div class="card p-5 flex flex-col gap-4 reveal" style={`animation-delay:${i * 0.1}s`}>
+          <!-- Image with icon fallback -->
+          <div class="h-28 bg-gradient-to-br from-primary/10 to-primary-light/5 rounded-xl
+                      overflow-hidden border border-primary/10 relative">
+            <img
+              src={cert.image}
+              alt={cert.name}
+              class="w-full h-full object-cover"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
+            />
+            <div class="absolute inset-0 hidden items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                   class="text-primary/40">
+                <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+              </svg>
+            </div>
+          </div>
+
+          <div class="flex-1">
+            <p class="font-semibold text-gray-900 dark:text-gray-100 text-sm leading-snug mb-1">
+              {cert.name}
+            </p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">{cert.issuer} · {cert.year}</p>
+          </div>
+
+          {cert.url && cert.url !== '#' && (
+            <a
+              href={cert.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-center gap-1.5 py-2 rounded-lg border border-gray-200
+                     dark:border-gray-700 text-xs font-medium text-gray-600 dark:text-gray-400
+                     hover:border-primary hover:text-primary dark:hover:text-primary-light transition-all duration-200"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/>
+              </svg>
+              Lihat Sertifikat
+            </a>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

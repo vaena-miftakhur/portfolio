@@ -1,0 +1,79 @@
+---
+---
+
+<section id="about" class="section-padding bg-gray-50/50 dark:bg-gray-900/50">
+  <div class="container-max">
+    <!-- Section Title -->
+    <div class="text-center mb-16 reveal">
+      <p class="text-primary font-semibold tracking-wider uppercase text-sm mb-2">Tentang Saya</p>
+      <h2 class="text-3xl sm:text-4xl font-bold">Who Am I?</h2>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12 items-start">
+      <!-- Bio -->
+      <div class="reveal">
+        <h3 class="text-xl font-bold mb-4 text-gray-800 dark:text-gray-100">
+          Vaena Miftakhur Risko
+        </h3>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+          Mahasiswa Informatika Semester 4 yang antusias di bidang pengembangan web, kecerdasan buatan, dan sistem pendukung keputusan. Saya senang membangun solusi nyata dari masalah sehari-hari menggunakan teknologi modern.
+        </p>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+          Selain coding, saya aktif berkontribusi dalam kegiatan akademik seperti pengabdian masyarakat (PPM) dan penelitian terapan. Saya percaya bahwa teknologi terbaik adalah yang memberikan dampak nyata bagi masyarakat.
+        </p>
+
+        <!-- Info grid -->
+        <div class="grid grid-cols-2 gap-4">
+          {[
+            { label: 'Nama', value: 'Vaena Miftakhur Risko' },
+            { label: 'Email', value: 'vaenamiftakhurrisko@gmail.com' },
+            { label: 'Lokasi', value: 'Tegal, Jawa Tengah' },
+            { label: 'Status', value: 'Mahasiswa Semester 4' },
+          ].map((item) => (
+            <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-gray-100 dark:border-gray-800">
+              <p class="text-xs text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-1">{item.label}</p>
+              <p class="text-sm font-semibold text-gray-800 dark:text-gray-200">{item.value}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Education + Interests -->
+      <div class="space-y-8 reveal" style="animation-delay:0.2s">
+        <!-- Education -->
+        <div>
+          <h3 class="flex items-center gap-2 text-lg font-bold mb-4 text-gray-800 dark:text-gray-100">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+            </svg>
+            Pendidikan
+          </h3>
+          <div class="card p-5">
+            <p class="font-semibold text-gray-800 dark:text-gray-100">D4 TeknikInformatika</p>
+            <p class="text-sm text-primary font-medium mt-0.5">Universitas Harkat Negeri · 2024 – Sekarang</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+              Fokus pada web development, AI, data mining, dan sistem pendukung keputusan.
+            </p>
+          </div>
+        </div>
+
+        <!-- Interests -->
+        <div>
+          <h3 class="flex items-center gap-2 text-lg font-bold mb-4 text-gray-800 dark:text-gray-100">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+            </svg>
+            Minat
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            {['Web Development', 'Artificial Intelligence', 'UI/UX Design', 'Data Mining', 'Decision Support Systems', 'Open Source', 'Batik & Budaya'].map((interest) => (
+              <span class="px-3 py-1.5 bg-primary/10 text-primary dark:text-primary-light rounded-lg text-sm font-medium">
+                {interest}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
